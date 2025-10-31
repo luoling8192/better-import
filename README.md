@@ -121,4 +121,4 @@ src/
 
 ## License
 
-ISC
+MIT

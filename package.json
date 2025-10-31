@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "packageManager": "pnpm@10.20.0",
   "description": "CLI tool to detect replaceable dependencies in package.json",
-  "author": "",
-  "license": "ISC",
+  "author": "RainbowBird <rbxin2003@outlook.com>",
+  "license": "MIT",
   "keywords": [
     "dependency",
     "cli",
