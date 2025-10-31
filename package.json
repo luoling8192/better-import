@@ -1,7 +1,7 @@
 {
   "name": "@unbird/better-import",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "pnpm@10.20.0",
   "description": "CLI tool to detect replaceable dependencies in package.json",
   "author": "RainbowBird <rbxin2003@outlook.com>",
