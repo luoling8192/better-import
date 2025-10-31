@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "tsdown",
-    "dev": "node src/cli.ts",
+    "dev": "pnpm run build && node ./dist/cli.mjs",
     "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -25,7 +25,7 @@
     "publish": "pnpm build && pnpm publish --access public --no-git-checks"
   },
   "dependencies": {
-    "@oclif/core": "^4.8.0",
+    "cac": "^6.7.14",
     "fast-glob": "^3.3.3",
     "picocolors": "^1.1.1"
   },
@@ -37,13 +37,5 @@
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "vitest": "^4.0.6"
-  },
-  "oclif": {
-    "bin": "better-import",
-    "dirname": "better-import",
-    "commands": "./dist/commands",
-    "devPlugins": [
-      "@oclif/plugin-help"
-    ]
   }
 }
