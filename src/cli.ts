@@ -63,9 +63,8 @@ cli
       )
     }
     else {
-      console.log(pc.yellow(`${pc.bold(packageName)}`))
-      console.log(pc.dim('───────────────────────'))
-      console.log(suggestion)
+      console.log(pc.yellow(pc.bold(packageName)))
+      console.log(`  ${pc.cyan('→')} ${suggestion}`)
     }
 
     process.exitCode = 1
