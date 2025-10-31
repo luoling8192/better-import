@@ -24,6 +24,9 @@ importers:
       '@unbird/eslint-config':
         specifier: ^1.0.2
         version: 1.0.2(@vue/compiler-sfc@3.5.22)(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.6(@types/debug@4.1.12)(@types/node@24.9.2)(jiti@2.6.1)(tsx@4.20.6)(yaml@2.8.1))
+      eslint:
+        specifier: ^9.38.0
+        version: 9.38.0(jiti@2.6.1)
       jiti:
         specifier: ^2.6.1
         version: 2.6.1

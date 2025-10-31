@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/node": "^24.9.2",
     "@unbird/eslint-config": "^1.0.2",
+    "eslint": "^9.38.0",
     "jiti": "^2.6.1",
     "tsdown": "^0.15.12",
     "tsx": "^4.20.6",
