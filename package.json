@@ -2,7 +2,7 @@
   "name": "restricted-import",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "pnpm@10.20.0",
   "description": "CLI tool to detect replaceable dependencies in package.json",
   "author": "",
   "license": "ISC",
@@ -13,14 +13,15 @@
     "package-manager"
   ],
   "bin": {
-    "restricted-import": "./dist/cli.js"
+    "restricted-import": "./dist/cli.mjs"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "pnpm build && node dist/cli.js",
+    "build": "tsdown",
+    "dev": "node src/cli.ts",
     "test": "vitest",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@oclif/core": "^4.8.0",
@@ -28,12 +29,13 @@
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/node": "^24.9.2",
     "@unbird/eslint-config": "^1.0.2",
     "jiti": "^2.6.1",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.9"
+    "tsdown": "^0.15.12",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.6"
   },
   "oclif": {
     "bin": "restricted-import",
