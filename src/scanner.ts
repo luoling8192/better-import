@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import process from 'node:process'
 
 import fg from 'fast-glob'
+import { parse } from 'yaml'
 
 export interface PackageJson {
   name?: string
@@ -26,6 +27,20 @@ function parseWorkspaces(workspaces: PackageJson['workspaces']): string[] {
   if (!workspaces)
     return []
   return Array.isArray(workspaces) ? workspaces : workspaces.packages
+}
+
+/**
+ * Read pnpm-workspace.yaml
+ */
+async function readPnpmWorkspace(cwd: string): Promise<string[]> {
+  try {
+    const content = await readFile(join(cwd, 'pnpm-workspace.yaml'), 'utf-8')
+    const config = parse(content) as { packages?: string[] }
+    return config.packages || []
+  }
+  catch {
+    return []
+  }
 }
 
 /**
@@ -86,8 +101,11 @@ export async function scanPackages(cwd: string = process.cwd()): Promise<Scanned
     },
   ]
 
-  // Scan workspaces if exists
-  const workspacePatterns = parseWorkspaces(rootPkg.workspaces)
+  // Try pnpm-workspace.yaml first, then fallback to package.json workspaces
+  let workspacePatterns = await readPnpmWorkspace(cwd)
+  if (workspacePatterns.length === 0) {
+    workspacePatterns = parseWorkspaces(rootPkg.workspaces)
+  }
 
   if (workspacePatterns.length > 0) {
     const workspacePaths = await fg(

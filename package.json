@@ -27,7 +27,8 @@
   "dependencies": {
     "cac": "^6.7.14",
     "fast-glob": "^3.3.3",
-    "picocolors": "^1.1.1"
+    "picocolors": "^1.1.1",
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
     "@types/node": "^24.9.2",
