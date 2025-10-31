@@ -22,7 +22,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "publish": "pnpm build && pnpm publish --access public --no-git-checks"
+    "package:publish": "pnpm build && pnpm publish --access public --no-git-checks"
   },
   "dependencies": {
     "cac": "^6.7.14",
