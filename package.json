@@ -21,7 +21,8 @@
     "test": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publish": "pnpm build && pnpm publish --access public --no-git-checks"
   },
   "dependencies": {
     "@oclif/core": "^4.8.0",
@@ -41,7 +42,6 @@
     "bin": "better-import",
     "dirname": "better-import",
     "commands": "./dist/commands",
-    "topicSeparator": " ",
     "devPlugins": [
       "@oclif/plugin-help"
     ]
