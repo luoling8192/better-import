@@ -1,5 +1,5 @@
 {
-  "name": "restricted-import",
+  "name": "@unbird/better-import",
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@10.20.0",
@@ -13,7 +13,7 @@
     "package-manager"
   ],
   "bin": {
-    "restricted-import": "./dist/cli.mjs"
+    "better-import": "./dist/cli.mjs"
   },
   "scripts": {
     "build": "tsdown",
@@ -38,8 +38,8 @@
     "vitest": "^4.0.6"
   },
   "oclif": {
-    "bin": "restricted-import",
-    "dirname": "restricted-import",
+    "bin": "better-import",
+    "dirname": "better-import",
     "commands": "./dist/commands",
     "topicSeparator": " ",
     "devPlugins": [

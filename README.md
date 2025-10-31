@@ -1,4 +1,4 @@
-# restricted-import
+# better-import
 
 CLI tool to detect replaceable dependencies in your package.json files. Automatically scans monorepo workspaces and suggests better, lighter, or more performant alternatives.
 
@@ -60,7 +60,7 @@ pnpm dev query lodash --json
 Check all packages in monorepo for replaceable dependencies.
 
 ```bash
-restricted-import check [--json] [--cwd <path>]
+better-import check [--json] [--cwd <path>]
 ```
 
 **Flags:**
@@ -71,7 +71,7 @@ restricted-import check [--json] [--cwd <path>]
 Query if a specific package has better alternatives.
 
 ```bash
-restricted-import query <package> [--json]
+better-import query <package> [--json]
 ```
 
 **Flags:**
@@ -79,9 +79,9 @@ restricted-import query <package> [--json]
 
 ### Help
 ```bash
-restricted-import --help
-restricted-import check --help
-restricted-import query --help
+better-import --help
+better-import check --help
+better-import query --help
 ```
 
 ## Exit Codes
@@ -91,7 +91,7 @@ restricted-import query --help
 
 ## Rules Source
 
-The replacement rules are based on [`src/restricted-import.ts`](./src/restricted-import.ts), which maintains a curated list of common dependencies and their better alternatives.
+The replacement rules are based on [`src/better-import.ts`](./src/better-import.ts), which maintains a curated list of common dependencies and their better alternatives.
 
 ## Architecture
 
@@ -102,7 +102,7 @@ src/
 ├── commands/
 │   ├── check.ts         # Check command
 │   └── query.ts         # Query command
-├── restricted-import.ts # Curated rules for better alternatives
+├── better-import.ts # Curated rules for better alternatives
 ├── scanner.ts          # Scans package.json files in monorepo
 ├── checker.ts          # Checks dependencies against rules
 ├── formatter.ts        # Formats output (table/JSON)
