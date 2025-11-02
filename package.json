@@ -18,7 +18,7 @@
   "scripts": {
     "build": "tsdown",
     "dev": "pnpm run build && node ./dist/cli.mjs",
-    "test": "vitest",
+    "test": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
