@@ -34,6 +34,30 @@ pnpm install
 pnpm build
 ```
 
+## Quick Start
+
+Run without installing globally:
+
+### pnpm
+
+```bash
+pnpm -s dlx @unbird/better-import@latest check
+# or
+pnpx -s @unbird/better-import@latest check
+```
+
+### bun
+
+```bash
+bunx -y @unbird/better-import@latest check
+```
+
+### npm
+
+```bash
+npx -y @unbird/better-import@latest check
+```
+
 ## Usage
 
 ### Check all packages in monorepo
@@ -109,6 +133,49 @@ better-import query --help
 
 - `0`: No replaceable dependencies found
 - `1`: Found replaceable dependencies (useful for CI/CD)
+
+## Prompt Engineering (for LLMs)
+
+This prompt can be used to guide language models (e.g., Claude Code, OpenAI Codex) in suggesting better alternatives for npm packages based on curated rules.
+
+```markdown
+## Tool: `@unbird/better-import`
+
+### What is it?
+
+A CLI that scans package.json files (including workspaces) and suggests better, lighter, or more performant alternatives.
+
+### What can it do?
+
+- Scan all workspaces and list replaceable dependencies
+- Query a single package for recommended alternatives
+- Output JSON for CI/CD pipelines
+
+### How to use it?
+
+Please run the following commands to use the tool:
+
+- For using pnpm: `pnpm -s dlx @unbird/better-import ...args` or `pnpx -s @unbird/better-import ...args`
+- For using bun: `bunx -y @unbird/better-import ...args`
+- For using npm: `npx -y @unbird/better-import ...args`
+
+Available commands:
+
+- `... check`: Scan all packages for replaceable dependencies
+- `... check --json`: Same as `... check` but outputs JSON to stdout
+- `... query <package>`: Query a specific package for recommended alternatives
+
+### When to use it?
+
+- During dependency audits, PR checks, or CI to enforce best-practice alternatives.
+- When deciding whether to adopt a dependency or replace an existing one.
+- Before introducing a new npm package, please run a `query` first.
+
+### Exit codes explained
+
+- 0: No replaceable dependencies
+- 1: Replaceable dependencies found (good for CI fail-fast)
+```
 
 ## Rules Source
 
